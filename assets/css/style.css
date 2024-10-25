@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primeiraCor: rgb(12, 12, 12);
+    --terceiraCor: rgb(0, 0, 0);
+    --segundaCor: rgb(226, 94, 195);
+    --letraColor: rgb(240, 240, 240);
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background-color: transparent; 
+    color: var(--letraColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 40px;
+    transition: background-color 0.5s ease;
+}
+
+a{
+    color: var(--letraColor);
+}
+.scrolled {
+    background-color: var(--primeiraCor); 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+nav a {
+    position: relative;
+    color: var(--letraColor);
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--segundaCor);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--segundaCor);
+}
+
+
+.container-logo {
+    display: flex;
+    align-items: center;
+}
+.img-logo {
+    width: 2vw;
+    height: 4vh;
+    margin-right: 0.8vw;
+}
+.sec-banner {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('../img/backgroud.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+.sec-banner h3 {
+    position: absolute; /* Torna o h3 posicionado em relação ao container */
+    bottom: 0;          /* Posiciona no canto inferior */
+    left: 30px;            /* Posiciona no canto esquerdo */
+    font-size: 60px;
+    padding: 105px;      /* Ajuste de padding, se necessário */
+    z-index: 2;         /* Certifique-se que está acima do gradiente */
+    color: var(--letraColor); /* Define a cor da fonte */
+}
+
+.gradiente {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0,0,0,0.3), rgba(255, 255, 255, 0));
+}
+
+.sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--terceiraCor);
+    color: var(--letraColor);
+    height: 70vh;
+    padding: 5vw;
+}
+.div-sec1{
+    margin:10vw;
+    padding: 5vw;
+    border-radius: 2vw;
+    background-color: var(--primeiraCor);
+    box-shadow: 2px 2px var(--segundaCor);
+}
+.div-sec1 h1 {
+    padding-bottom: 20px;
+}
+
+.sec-port{
+    background-color: var(--terceiraCor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+.sec-port h2 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+.container-port {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primeiraCor);
+    width: 100vw;
+    padding: 50px 0;
+}
+.foto {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 50px;
+    background-color: var(--terceiraCor);
+}
+.foto:hover {
+    transform: scale(1.05);
+}
+
+.foto img {
+    width: 400px;
+    height: 250px;
+    border-bottom: 3px solid var(--segundaCor);
+}
+
+.foto .descricao {
+    color: var(--letraColor);
+    font-size: 1em;
+    background-color: var(--terceiraCor);
+}
+
+.sec-contato {
+    background-color: var(--terceiraCor);
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--letraColor);
+    text-align: center;
+}
+
+.sec-contato h2 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.sec-contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.sec-contato label {
+    font-size: 1em;
+    text-align: left;
+    justify-content: start;
+    color: var(--letraColor);
+}
+
+.sec-contato input,
+.sec-contato textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--segundaCor);
+    border-radius: 20px;
+    background-color: var(--primeiraCor);
+    color: var(--letraColor);
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.sec-contato input:focus,
+.sec-contato textarea:focus {
+    border-color: var(--segundaCor);
+}
+
+.sec-contato button {
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.2em;
+    color: white;
+    width: 100px;
+    border-radius: 20px;
+    border: 2px solid var(--segundaCor);
+    background-color: var(--segundaCor);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sec-contato button:hover {
+    border: 2px solid var(--segundaCor);
+    background: black;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sec-contato textarea {
+    resize: none;
+    height: 150px;
+}
+ 
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--segundaCor);
+    color: var(--letraColor);
+    flex-direction:column ;
+    padding: 70px;
+}
+
+footer .container-logo{
+     
+}
